@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0" xmlns:t3="http://typo3.org/schemas/xliff">
+	<file source-language="en" datatype="plaintext" original="messages" product-name="bootstrap">
+		<header/>
+		<body>
+			<trans-unit id="flux.oneColumn">
+				<source>1-Column Content</source>
+			</trans-unit>
+			<trans-unit id="flux.oneColumn.description">
+				<source>1 Column</source>
+			</trans-unit>
+			<trans-unit id="flux.oneColumn.columns.main">
+				<source>Main Content</source>
+			</trans-unit>
+			<trans-unit id="flux.oneColumn.fields.settings.main.class">
+				<source>Column Class</source>
+			</trans-unit>
+
+
+			<trans-unit id="flux.twoColumns">
+				<source>2-Columns Content</source>
+			</trans-unit>
+			<trans-unit id="flux.twoColumns.description">
+				<source>2 Columns</source>
+			</trans-unit>
+			<trans-unit id="flux.twoColumns.columns.left">
+				<source>Left Content</source>
+			</trans-unit>
+			<trans-unit id="flux.twoColumns.columns.right">
+				<source>Right Content</source>
+			</trans-unit>
+			<trans-unit id="flux.twoColumns.fields.settings.left.class">
+				<source>Left Column Class</source>
+			</trans-unit>
+			<trans-unit id="flux.twoColumns.fields.settings.right.class">
+				<source>Right Column Class</source>
+			</trans-unit>
+
+
+			<trans-unit id="flux.threeColumns">
+				<source>3-Columns Content</source>
+			</trans-unit>
+			<trans-unit id="flux.threeColumns.description">
+				<source>3 Columns</source>
+			</trans-unit>
+			<trans-unit id="flux.threeColumns.columns.left">
+				<source>Left Content</source>
+			</trans-unit>
+			<trans-unit id="flux.threeColumns.columns.middle">
+				<source>Middle Content</source>
+			</trans-unit>
+			<trans-unit id="flux.threeColumns.columns.right">
+				<source>Right Content</source>
+			</trans-unit>
+			<trans-unit id="flux.threeColumns.fields.settings.left.class">
+				<source>Left Column Class</source>
+			</trans-unit>
+			<trans-unit id="flux.threeColumns.fields.settings.middle.class">
+				<source>Left Column Class</source>
+			</trans-unit>
+			<trans-unit id="flux.threeColumns.fields.settings.right.class">
+				<source>Right Column Class</source>
+			</trans-unit>
+
+
+			<trans-unit id="flux.fourColumns">
+				<source>4-Columns Content</source>
+			</trans-unit>
+			<trans-unit id="flux.fourColumns.description">
+				<source>4 Columns</source>
+			</trans-unit>
+			<trans-unit id="flux.fourColumns.columns.col1">
+				<source>1st Column Content</source>
+			</trans-unit>
+			<trans-unit id="flux.fourColumns.columns.col2">
+				<source>2nd Column Content</source>
+			</trans-unit>
+			<trans-unit id="flux.fourColumns.columns.col3">
+				<source>3rd Column Content</source>
+			</trans-unit>
+			<trans-unit id="flux.fourColumns.columns.col4">
+				<source>4th Column Content</source>
+			</trans-unit>
+			<trans-unit id="flux.fourColumns.fields.settings.col1.class">
+				<source>1st Column Class</source>
+			</trans-unit>
+			<trans-unit id="flux.fourColumns.fields.settings.col2.class">
+				<source>2nd Column Class</source>
+			</trans-unit>
+			<trans-unit id="flux.fourColumns.fields.settings.col3.class">
+				<source>3rd Column Class</source>
+			</trans-unit>
+			<trans-unit id="flux.fourColumns.fields.settings.col4.class">
+				<source>4th Column Class</source>
+			</trans-unit>
+
+
+			<trans-unit id="flux.jumbotron">
+				<source>Jumbotron</source>
+			</trans-unit>
+			<trans-unit id="flux.jumbotron.description">
+				<source>Flexible Content - Jumbotron</source>
+			</trans-unit>
+			<trans-unit id="flux.jumbotron.columns.content">
+				<source>Jumbotron Content</source>
+			</trans-unit>
+			<trans-unit id="flux.jumbotron.fields.settings.jumbotron.fullWidth">
+				<source>Full Width</source>
+			</trans-unit>
+
+
+			<trans-unit id="flux.panel">
+				<source>Panel</source>
+			</trans-unit>
+			<trans-unit id="flux.panel.description">
+				<source>Flexible Content - Panel</source>
+			</trans-unit>
+			<trans-unit id="flux.panel.columns.content">
+				<source>Panel Content</source>
+			</trans-unit>
+			<trans-unit id="flux.panel.columns.footer">
+				<source>Panel Footer</source>
+			</trans-unit>
+			<trans-unit id="flux.panel.fields.settings.panel.class">
+				<source>Panel Class</source>
+			</trans-unit>
+			<trans-unit id="flux.panel.fields.settings.panel.class.option.danger">
+				<source>Danger</source>
+			</trans-unit>
+			<trans-unit id="flux.panel.fields.settings.panel.class.option.default">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="flux.panel.fields.settings.panel.class.option.info">
+				<source>Info</source>
+			</trans-unit>
+			<trans-unit id="flux.panel.fields.settings.panel.class.option.primary">
+				<source>Primary</source>
+			</trans-unit>
+			<trans-unit id="flux.panel.fields.settings.panel.class.option.success">
+				<source>Success</source>
+			</trans-unit>
+			<trans-unit id="flux.panel.fields.settings.panel.class.option.warning">
+				<source>Warning</source>
+			</trans-unit>
+			<trans-unit id="flux.panel.fields.settings.panel.footer">
+				<source>Enable Panel Footer</source>
+			</trans-unit>
+
+
+			<trans-unit id="flux.tab">
+				<source>Tab Content</source>
+			</trans-unit>
+			<trans-unit id="flux.tab.description">
+				<source>Flexible Content - Tab</source>
+			</trans-unit>
+			<trans-unit id="flux.tab.columns.content">
+				<source>Tab Content</source>
+			</trans-unit>
+			<trans-unit id="flux.tab.fields.settings.tab.class">
+				<source>Tab Class</source>
+			</trans-unit>
+			<trans-unit id="flux.tab.fields.settings.tab.class.option.pill">
+				<source>Pill</source>
+			</trans-unit>
+			<trans-unit id="flux.tab.fields.settings.tab.class.option.tab">
+				<source>Tab</source>
+			</trans-unit>
+			<trans-unit id="flux.tab.fields.settings.tab.fade">
+				<source>Fade Effect</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

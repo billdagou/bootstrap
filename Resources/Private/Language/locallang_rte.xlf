@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0" xmlns:t3="http://typo3.org/schemas/xliff">
+	<file source-language="en" datatype="plaintext" original="messages" product-name="bootstrap">
+		<header/>
+		<body>
+			<trans-unit id="class.bg.danger">
+				<source>Background: Danger</source>
+			</trans-unit>
+			<trans-unit id="class.bg.info">
+				<source>Background: Info</source>
+			</trans-unit>
+			<trans-unit id="class.bg.primary">
+				<source>Background: Primary</source>
+			</trans-unit>
+			<trans-unit id="class.bg.success">
+				<source>Background: Success</source>
+			</trans-unit>
+			<trans-unit id="class.bg.warning">
+				<source>Background: Warning</source>
+			</trans-unit>
+
+
+			<trans-unit id="class.blockquote.reverse">
+				<source>Alternate displays</source>
+			</trans-unit>
+
+
+			<trans-unit id="class.btn">
+				<source>Button: Base</source>
+			</trans-unit>
+			<trans-unit id="class.btn.block">
+				<source>Button Style: Block</source>
+			</trans-unit>
+			<trans-unit id="class.btn.danger">
+				<source>Button Style: Danger</source>
+			</trans-unit>
+			<trans-unit id="class.btn.default">
+				<source>Button Style: Default</source>
+			</trans-unit>
+			<trans-unit id="class.btn.info">
+				<source>Button Style: Info</source>
+			</trans-unit>
+			<trans-unit id="class.btn.lg">
+				<source>Button Size: Large</source>
+			</trans-unit>
+			<trans-unit id="class.btn.link">
+				<source>Button Style: Link</source>
+			</trans-unit>
+			<trans-unit id="class.btn.primary">
+				<source>Button Style: Primary</source>
+			</trans-unit>
+			<trans-unit id="class.btn.sm">
+				<source>Button Size: Small</source>
+			</trans-unit>
+			<trans-unit id="class.btn.success">
+				<source>Button Style: Success</source>
+			</trans-unit>
+			<trans-unit id="class.btn.warning">
+				<source>Button Style: Warning</source>
+			</trans-unit>
+			<trans-unit id="class.btn.xs">
+				<source>Button Size: Extra small</source>
+			</trans-unit>
+
+
+			<trans-unit id="class.contextual.active">
+				<source>Active</source>
+			</trans-unit>
+			<trans-unit id="class.contextual.danger">
+				<source>Danger</source>
+			</trans-unit>
+			<trans-unit id="class.contextual.info">
+				<source>Info</source>
+			</trans-unit>
+			<trans-unit id="class.contextual.success">
+				<source>Success</source>
+			</trans-unit>
+			<trans-unit id="class.contextual.warning">
+				<source>Warning</source>
+			</trans-unit>
+
+
+			<trans-unit id="class.dl.horizontal">
+				<source>Horizontal description</source>
+			</trans-unit>
+
+
+			<trans-unit id="class.float.center">
+				<source>Position: Center</source>
+			</trans-unit>
+			<trans-unit id="class.float.clear">
+				<source>Position: Clear</source>
+			</trans-unit>
+			<trans-unit id="class.float.left">
+				<source>Position: Left</source>
+			</trans-unit>
+			<trans-unit id="class.float.right">
+				<source>Position: Right</source>
+			</trans-unit>
+
+
+			<trans-unit id="class.img.circle">
+				<source>Image shape: Circle</source>
+			</trans-unit>
+			<trans-unit id="class.img.responsive">
+				<source>Responsive image</source>
+			</trans-unit>
+			<trans-unit id="class.img.rounded">
+				<source>Image shape: Rounded</source>
+			</trans-unit>
+			<trans-unit id="class.img.thumbnail">
+				<source>Image shape: Thumbnail</source>
+			</trans-unit>
+
+
+			<trans-unit id="class.lead">
+				<source>Text Size: Lead</source>
+			</trans-unit>
+			<trans-unit id="class.mark">
+				<source>Text Style: Marked</source>
+			</trans-unit>
+			<trans-unit id="class.small">
+				<source>Text Size: Small</source>
+			</trans-unit>
+
+
+			<trans-unit id="class.list.inline">
+				<source>Inline list</source>
+			</trans-unit>
+			<trans-unit id="class.list.unstyled">
+				<source>Unstyled list</source>
+			</trans-unit>
+
+
+			<trans-unit id="class.pre.scrollable">
+				<source>Scrollable</source>
+			</trans-unit>
+
+
+			<trans-unit id="class.table">
+				<source>Table: Base</source>
+			</trans-unit>
+			<trans-unit id="class.table.bordered">
+				<source>Table Style: Bordered table</source>
+			</trans-unit>
+			<trans-unit id="class.table.condensed">
+				<source>Table Style: Condensed table</source>
+			</trans-unit>
+			<trans-unit id="class.table.hover">
+				<source>Table Style: Hover rows</source>
+			</trans-unit>
+			<trans-unit id="class.table.responsive">
+				<source>Responsive table</source>
+			</trans-unit>
+			<trans-unit id="class.table.striped">
+				<source>Table Style: Striped rows</source>
+			</trans-unit>
+
+
+			<trans-unit id="class.text.capitalize">
+				<source>Text Transform: Capitalize</source>
+			</trans-unit>
+			<trans-unit id="class.text.center">
+				<source>Text Align: Center</source>
+			</trans-unit>
+			<trans-unit id="class.text.justify">
+				<source>Text Align: Justified</source>
+			</trans-unit>
+			<trans-unit id="class.text.left">
+				<source>Text Align: Left</source>
+			</trans-unit>
+			<trans-unit id="class.text.lowercase">
+				<source>Text Transform: Lowercase</source>
+			</trans-unit>
+			<trans-unit id="class.text.nowrap">
+				<source>Text Align: No wrap</source>
+			</trans-unit>
+			<trans-unit id="class.text.right">
+				<source>Text Align: Right</source>
+			</trans-unit>
+			<trans-unit id="class.text.uppercase">
+				<source>Text Transform: Uppercase</source>
+			</trans-unit>
+
+
+			<trans-unit id="class.text.danger">
+				<source>Text Style: Danger</source>
+			</trans-unit>
+			<trans-unit id="class.text.info">
+				<source>Text Style: Info</source>
+			</trans-unit>
+			<trans-unit id="class.text.muted">
+				<source>Text Style: Muted</source>
+			</trans-unit>
+			<trans-unit id="class.text.primary">
+				<source>Text Style: Primary</source>
+			</trans-unit>
+			<trans-unit id="class.text.success">
+				<source>Text Style: Success</source>
+			</trans-unit>
+			<trans-unit id="class.text.warning">
+				<source>Text Style: Warning</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

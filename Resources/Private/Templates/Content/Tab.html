@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+	xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	xmlns:vhs="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	data-namespace-typo3-fluid="true">
+	<f:layout name="FCE" />
+
+	<f:section name="Configuration">
+		<flux:form id="tab" options="{group: 'Bootstrap FCE'}">
+			<flux:field.select name="settings.tab.class" items="tab, pill" translateCsvItems="TRUE" />
+			<flux:field.checkbox name="settings.tab.fade" default="TRUE" />
+		</flux:form>
+		<flux:grid>
+			<flux:grid.row>
+				<flux:grid.column name="content" />
+			</flux:grid.row>
+		</flux:grid>
+	</f:section>
+
+	<f:section name="Main">
+		<flux:content.get area="content" as="tabs" render="FALSE">
+			<f:if condition="{tabs}">
+				<ul class="nav nav-{settings.tab.class}s" role="tablist">
+					<f:for each="{tabs}" as="tab" iteration="tabIteration">
+						<li{f:if(condition: tabIteration.isFirst, then: ' class="active"')} role="presentation">
+							<a href="#c{tab.uid}" aria-controls="c{tab.uid}" role="tab" data-toggle="{settings.tab.class}">{tab.header}</a>
+						</li>
+					</f:for>
+				</ul>
+				<div class="tab-content">
+					<f:for each="{tabs}" as="tab" iteration="tabIteration">
+						<div id="c{tab.uid}" class="tab-pane{f:if(condition: settings.tab.fade, then: ' fade')}{f:if(condition: tabIteration.isFirst, then: ' active')}{f:if(condition: settings.tab.fade, then: '{f:if(condition: tabIteration.isFirst, then: \' in\')}')}" role="tabpanel">
+							<vhs:content.render contentUids="{1: tab.uid}" />
+						</div>
+					</f:for>
+				</div>
+			</f:if>
+		</flux:content.get>
+	</f:section>
+</html>

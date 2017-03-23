@@ -1,0 +1,262 @@
+RTE.classes {
+	lead {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.lead
+		value = font-size: 150%;
+	}
+	small {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.small
+		value = font-size: 85%;
+	}
+	mark {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.mark
+		value = background-color: #fcf8e3; padding: 0.2em;
+	}
+
+	text-left {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.text.left
+		value = text-align: left;
+	}
+	text-center {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.text.center
+		value = text-align: center;
+	}
+	text-right {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.text.right
+		value = text-align: right;
+	}
+	text-justify {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.text.justify
+		value = text-align: justify;
+	}
+	text-nowrap {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.text.nowrap
+		value = white-space: nowrap;
+	}
+
+	text-lowercase {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.text.lowercase
+		value = text-transform: lowercase;
+	}
+	text-uppercase {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.text.uppercase
+		value = text-transform: uppercase;
+	}
+	text-capitalize {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.text.capitalize
+		value = text-transform: capitalize;
+	}
+
+	initialism {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.initialism
+	}
+
+	blockquote-reverse {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.blockquote.reverse
+	}
+
+	list-unstyled {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.list.unstyled
+	}
+	list-inline {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.list.inline
+	}
+
+	dl-horizontal {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.dl.horizontal
+	}
+
+	pre-scrollable {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.pre.scrollable
+	}
+
+	table-responsive {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.table.responsive
+	}
+	table {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.table
+	}
+	table-striped {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.table.striped
+	}
+	table-bordered {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.table.bordered
+	}
+	table-hover {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.table.hover
+	}
+	table-condensed {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.table.condensed
+	}
+
+	active {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.contextual.active
+	}
+	success {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.contextual.success
+	}
+	info {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.contextual.info
+	}
+	warning {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.contextual.warning
+	}
+	danger {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.contextual.danger
+	}
+
+	btn {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.btn
+	}
+	btn-default {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.btn.default
+	}
+	btn-primary {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.btn.primary
+	}
+	btn-success {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.btn.success
+	}
+	btn-info {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.btn.info
+	}
+	btn-warning {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.btn.warning
+	}
+	btn-danger {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.btn.danger
+	}
+	btn-link {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.btn.link
+	}
+	btn-lg {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.btn.lg
+	}
+	btn-sm {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.btn.sm
+	}
+	btn-xs {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.btn.xs
+	}
+	btn-block {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.btn.block
+	}
+
+	img-responsive {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.img.responsive
+	}
+	img-rounded {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.img.rounded
+	}
+	img-circle {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.img.circle
+	}
+	img-thumbnail {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.img.thumbnail
+	}
+
+	text-muted {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.text.muted
+	}
+	text-primary {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.text.primary
+	}
+	text-success {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.text.success
+	}
+	text-info {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.text.info
+	}
+	text-warning {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.text.warning
+	}
+	text-danger {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.text.danger
+	}
+
+	bg-primary {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.bg.primary
+	}
+	bg-success {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.bg.success
+	}
+	bg-info {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.bg.info
+	}
+	bg-warning {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.bg.warning
+	}
+	bg-danger {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.bg.danger
+	}
+
+	pull-left {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.float.left
+	}
+	center-block {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.float.center
+	}
+	pull-right {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.float.right
+	}
+	clearfix {
+		name = LLL:EXT:bootstrap/Resources/Private/Language/locallang_rte.xlf:class.float.clear
+	}
+}
+
+RTE.default {
+	contentCSS {
+		bootstrap = EXT:bootstrap/Resources/Public/css/bootstrap.min.css
+		theme = EXT:bootstrap/Resources/Public/css/bootstrap-theme.min.css
+		rte = EXT:bootstrap/Resources/Public/Stylesheets/rte.css
+	}
+}
+
+RTE.default.buttons {
+	formatblock {
+		orderItems = h1, h2, h3, h4, h5, h6, div, p, blockquote, footer, pre, address
+		removeItems =
+	}
+	blockstyle {
+		tags {
+			h1.allowedClasses = text-left, text-center, text-right, text-justify, text-nowrap, text-lowercase, text-uppercase, text-capitalize
+			h2.allowedClasses = text-left, text-center, text-right, text-justify, text-nowrap, text-lowercase, text-uppercase, text-capitalize
+			h3.allowedClasses = text-left, text-center, text-right, text-justify, text-nowrap, text-lowercase, text-uppercase, text-capitalize
+			h4.allowedClasses = text-left, text-center, text-right, text-justify, text-nowrap, text-lowercase, text-uppercase, text-capitalize
+			h5.allowedClasses = text-left, text-center, text-right, text-justify, text-nowrap, text-lowercase, text-uppercase, text-capitalize
+			h6.allowedClasses = text-left, text-center, text-right, text-justify, text-nowrap, text-lowercase, text-uppercase, text-capitalize
+
+			div.allowedClasses = pull-left, center-block, pull-right, clearfix, table-responsive
+			p.allowedClasses = text-left, text-center, text-right, text-justify, text-nowrap, text-lowercase, text-uppercase, text-capitalize, lead, small, mark, text-muted, text-primary, text-success, text-info, text-warning, text-danger, bg-primary, bg-success, bg-info, bg-warning, bg-danger
+			blockquote.allowedClasses = blockquote-reverse
+
+			ul.allowedClasses = list-unstyled, list-inline
+			ol.allowedClasses = list-unstyled, list-inline
+			dl.allowedClasses = dl-horizontal
+
+			pre.allowedClasses = pre-scrollable
+
+			table.allowedClasses = table, table-striped, table-bordered, table-hover, table-condensed
+			tr.allowedClasses = active, success, info, warning, danger
+			td.allowedClasses = active, success, info, warning, danger
+		}
+	}
+	textstyle {
+		tags {
+			abbr.allowedClasses = initialism
+			span.allowedClasses = lead, small, mark, text-lowercase, text-uppercase, text-capitalize
+			a.allowedClasses = btn, btn-default, btn-primary, btn-success, btn-info, btn-warning, btn-danger, btn-link, btn-lg, btn-sm, btn-xs, btn-block
+		}
+	}
+	link >
+	toggleborders {
+		setOnTableCreation = 1
+		setOnRTEOpen = 1
+	}
+}
+
+RTE.default.proc {
+	allowedClasses = lead, small, mark, text-left, text-center, text-right, text-justify, text-nowrap, text-lowercase, text-uppercase, text-capitalize, initialism, blockquote-reverse, list-unstyled, list-inline, dl-horizontal, pre-scrollable, table-responsive, table, table-striped, table-bordered, table-hover, table-condensed, active, success, info, warning, danger, img-responsive, img-rounded, img-circle, img-thumbnail, text-muted, text-primary, text-success, text-info, text-warning, text-danger, bg-primary, bg-success, bg-info, bg-warning, bg-danger, pull-left, center-block, pull-right, clearfix
+}
+
+RTE.default.FE < RTE.default
+RTE.default.FE.FE >

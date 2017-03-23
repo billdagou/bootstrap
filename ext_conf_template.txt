@@ -1,0 +1,2 @@
+# cat=Bootstrap; type=user[Dagou\Bootstrap\ExtensionManagerConfiguration->renderCDNSelector]; label=Bootstrap CDN
+cdn =

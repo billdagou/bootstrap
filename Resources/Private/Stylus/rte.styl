@@ -1,0 +1,93 @@
+blank()
+	content ''
+
+for tag in h1 h2 h3 h4 h5 h6 p
+	{tag}.text-left
+	{tag}.text-center
+	{tag}.text-right
+	{tag}.text-justify
+	{tag}.text-nowrap
+		blank 1
+
+for tag in h1 h2 h3 h4 h5 h6 p span
+	{tag}.text-lowercase
+	{tag}.text-uppercase
+	{tag}.text-capitalize
+		blank 1
+
+for tag in p span
+	{tag}.lead
+	{tag}.small
+	{tag}.mark
+		blank 1
+
+abbr.initialism
+	blank 1
+
+blockquote.blockquote-reverse
+	blank 1
+
+for tag in ul ol
+	{tag}.list-unstyled
+	{tag}.list-inline
+		blank 1
+
+dl.dl-horizontal
+	blank 1
+
+pre.pre-scrollable
+	blank 1
+
+div.table-responsive
+table.table
+table.table-striped
+table.table-bordered
+table.table-hover
+table.table-condensed
+	blank 1
+for tag in tr td
+	{tag}.active
+	{tag}.success
+	{tag}.info
+	{tag}.warning
+	{tag}.danger
+		blank 1
+
+a.btn
+a.btn-default
+a.btn-primary
+a.btn-success
+a.btn-info
+a.btn-warning
+a.btn-danger
+a.btn-link
+a.btn-lg
+a.btn-sm
+a.btn-xs
+a.btn-block
+	blank 1
+
+div.img-responsive
+img.img-rounded
+img.img-circle
+img.img-thumbnail
+	blank 1
+
+p.text-muted
+p.text-primary
+p.text-success
+p.text-info
+p.text-warning
+p.text-danger
+p.bg-primary
+p.bg-success
+p.bg-info
+p.bg-warning
+p.bg-danger
+	blank 1
+
+div.pull-left
+div.center-block
+div.pull-right
+div.clearfix
+	blank 1
