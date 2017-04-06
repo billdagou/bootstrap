@@ -8,10 +8,8 @@ $EM_CONF[$_EXTKEY] = [
 			'fluidcontent' => '',
 			'flux' => '',
 			'jquery' => '',
+			'typo3' => '7.6.0-8.7.99',
 			'vhs' => '',
-		],
-		'suggests' => [
-			'rtehtmlarea' => '7.6.0-7.6.99',
 		],
 	],
 	'state' => 'stable',
