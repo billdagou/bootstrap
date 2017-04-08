@@ -74,4 +74,8 @@ Customized Bootstrap theme.
 ## How to maintain the CDN resources
 To replace or add new CDN resources, please update $GLOBALS\['TYPO3\_CONF\_VARS'\]\['EXTCONF'\]\['bootstrap'\]\['CDN'\] in your own extension.
 
-	$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['bootstrap']['CDN']['New_CDN_Name'] = '...';
+	$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['bootstrap']['CDN']['New_CDN_Name'] = [
+		'css' => '...',
+		'js' => '...',
+		'theme' => '...',
+	];
