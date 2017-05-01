@@ -65,9 +65,6 @@ Customized Bootstrap javascript library.
 - `footer` (boolean)
 Add the library to footer or not. Default: `TRUE`.
 
-- `enableTheme` (boolean)
-Use Bootstrap theme or not.
-
 - `theme` (string)
 Customized Bootstrap theme.
 

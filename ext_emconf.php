@@ -5,11 +5,8 @@ $EM_CONF[$_EXTKEY] = [
 	'category' => 'misc',
 	'constraints' => [
 		'depends' => [
-			'fluidcontent' => '',
-			'flux' => '',
 			'jquery' => '',
-			'typo3' => '7.6.0-8.7.99',
-			'vhs' => '',
+			'typo3' => '8.7.0-8.7.99',
 		],
 	],
 	'state' => 'stable',

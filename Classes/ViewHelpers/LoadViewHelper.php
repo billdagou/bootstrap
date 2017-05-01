@@ -10,7 +10,6 @@ class LoadViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper
 	 */
 	public function initializeArguments() {
 		$this->registerArgument('css', 'string', 'Customized Bootstrap stylesheet.');
-		$this->registerArgument('enableTheme', 'boolean', 'Use Bootstrap theme or not.');
 		$this->registerArgument('footer', 'boolean', 'Add to footer or not.', FALSE, TRUE);
 		$this->registerArgument('js', 'string', 'Customized Bootstrap javascript.');
 		$this->registerArgument('theme', 'string', 'Customized Bootstrap theme.');
@@ -22,7 +21,7 @@ class LoadViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper
 	public function render() {
 		BootstrapUtility::loadBootstrap($this->arguments['js'], $this->arguments['css'], $this->arguments['footer']);
 
-		if ($this->arguments['enableTheme']) {
+		if ($this->arguments['theme']) {
 			BootstrapUtility::loadBootstrapTheme($this->arguments['theme']);
 		}
 	}

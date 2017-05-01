@@ -6,11 +6,11 @@ class AlertViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractTagBasedV
 	 * @var array
 	 */
 	protected $status = [
-		\TYPO3\CMS\Core\Messaging\AbstractMessage::NOTICE => 'warning',
+		\TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR => 'danger',
 		\TYPO3\CMS\Core\Messaging\AbstractMessage::INFO => 'info',
+		\TYPO3\CMS\Core\Messaging\AbstractMessage::NOTICE => 'warning',
 		\TYPO3\CMS\Core\Messaging\AbstractMessage::OK => 'success',
 		\TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING => 'warning',
-		\TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR => 'danger',
 	];
 
 	/**
