@@ -26,7 +26,7 @@ Or, load the JS before the &lt;BODY&gt; tag.
 
     <bs:loadJs footer="false" />
     
-To add new CDN source, please refer to `\Dagou\Bootstrap\Cdn\Bootstrap` and update `$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$_EXTKEY]['CDN']` accordingly.  
+To add new CDN source, please refer to `\Dagou\Bootstrap\Cdn\Bootstrap` and update `$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['bootstrap']['CDN']` accordingly.  
 
 ## ViewHelper
 

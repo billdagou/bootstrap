@@ -1,10 +1,7 @@
 <?php
 namespace Dagou\Bootstrap\Cdn;
 
-use Dagou\Bootstrap\Traits\Asset;
-
 class Bootstrap extends AbstractCdn {
-    use Asset;
     const URL = '//stackpath.bootstrapcdn.com/bootstrap/';
 
     /**
