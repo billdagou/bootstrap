@@ -1,58 +1,49 @@
 <?php
 namespace Dagou\Bootstrap\ViewHelpers;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Utility\PathUtility;
+use Dagou\Bootstrap\Traits\Asset;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
 
-class ImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper {
-	/**
-	 * @var string
-	 */
-	protected $tagName = 'img';
+class ImageViewHelper extends AbstractTagBasedViewHelper {
+    use Asset;
+    /**
+     * @var string
+     */
+    protected $tagName = 'img';
 
-	/**
-	 * @var array
-	 */
-	protected $shape = ['circle', 'rounded', 'thumbnail'];
+    public function initializeArguments() {
+        parent::initializeArguments();
+        $this->registerArgument('src', 'string', 'Image path.', TRUE);
+        $this->registerArgument('responsive', 'boolean', 'Is responsive image or not.');
+        $this->registerArgument('thumbnail', 'boolean', 'Is thumbnail or not.');
+        $this->registerTagAttribute('alt', 'string', 'Alternative text.');
+        $this->registerUniversalTagAttributes();
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * @see \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArguments()
-	 */
-	public function initializeArguments() {
-		$this->registerArgument('alt', 'string', 'Alternative text.');
-		$this->registerArgument('class', 'string', 'CSS class(es) for this element.');
-		$this->registerArgument('responsive', 'boolean', 'Whether the image is responsive or not.');
-		$this->registerArgument('shape', 'string', 'Image shape.');
-		$this->registerArgument('src', 'string', 'Image file path.', TRUE);
-	}
+    /**
+     * @return string
+     */
+    public function render() {
+        $classes = [];
 
-	/**
-	 * @return string
-	 */
-	public function render() {
-		$classes = [];
+        if ($this->arguments['responsive']) {
+            $classes[] = 'img-fluid';
+        }
 
-		if ($this->arguments['responsive']) {
-			$classes[] = 'img-responsive';
-		}
-		if ($this->arguments['shape'] && in_array($this->arguments['shape'], $this->shape)) {
-			$classes[] = 'img-'.$this->arguments['shape'];
-		}
-		if ($this->arguments['class']) {
-			$classes[] = trim($this->arguments['class']);
-		}
+        if ($this->arguments['thumbnail']) {
+            $classes[] = 'img-thumbnail';
+        }
 
-		if (count($classes)) {
-			$this->tag->addAttribute('class', implode(' ', $classes));
-		}
+        if ($this->tag->getAttribute('class')) {
+            $classes[] = $this->tag->getAttribute('class');
+        }
 
-		$this->tag->addAttribute('src', PathUtility::stripPathSitePrefix(GeneralUtility::getFileAbsFileName($this->arguments['src'])));
+        if (count($classes)) {
+            $this->tag->addAttribute('class', implode(' ', $classes));
+        }
 
-		if ($this->arguments['alt']) {
-			$this->tag->addAttribute('alt', $this->arguments['alt']);
-		}
+        $this->tag->addAttribute('src', $this->getAssetPath($this->arguments['src']));
 
-		return $this->tag->render();
-	}
+        return $this->tag->render();
+    }
 }

@@ -1,50 +1,63 @@
 <?php
 namespace Dagou\Bootstrap\ViewHelpers;
 
-class AlertViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper {
-	/**
-	 * @var array
-	 */
-	protected $status = [
-		\TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR => 'danger',
-		\TYPO3\CMS\Core\Messaging\AbstractMessage::INFO => 'info',
-		\TYPO3\CMS\Core\Messaging\AbstractMessage::NOTICE => 'warning',
-		\TYPO3\CMS\Core\Messaging\AbstractMessage::OK => 'success',
-		\TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING => 'warning',
-	];
+use Dagou\Bootstrap\Traits\Context;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
 
-	/**
-	 * {@inheritDoc}
-	 * @see \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArguments()
-	 */
-	public function initializeArguments() {
-		$this->registerArgument('identifier', 'string', 'Flash-message queue to use.');
-	}
+class AlertViewHelper extends AbstractTagBasedViewHelper {
+    use Context;
+    /**
+     * @var string
+     */
+    protected $tagName = 'div';
 
-	/**
-	 * @return string
-	 */
-	public function render() {
-		$flashMessages = $this->controllerContext
-			->getFlashMessageQueue($this->arguments['identifier'])
-			->getAllMessagesAndFlush();
+    public function initializeArguments() {
+        parent::initializeArguments();
+        $this->registerArgument('context', 'string', 'Contextual class name.', FALSE, 'primary');
+        $this->registerArgument('dismiss', 'boolean', 'Allow dismissing or not.');
+        $this->registerArgument('animate', 'boolean', 'Animated dismissing or not.', FALSE, TRUE);
+        $this->registerArgument('label', 'string', 'ARIA label.', FALSE, 'Close');
+        $this->registerArgument('symbol', 'string', 'Dismissing symbol.', FALSE, '&times;');
+        $this->registerUniversalTagAttributes();
+    }
 
-		if ($flashMessages === NULL || count($flashMessages) === 0) {
-			return '';
-		}
+    /**
+     * @return string
+     */
+    public function render() {
+        if (($content = $this->renderChildren())) {
+            $classes = [
+                'alert',
+            ];
 
-		$content = '';
+            if ($this->isValidContext($this->arguments['context'])) {
+                $classes[] = 'alert-'.$this->arguments['context'];
+            }
 
-		foreach ($flashMessages as $flashMessage) {
-			$this->tag->addAttributes([
-				'class' => 'alert alert-'.($this->status[$flashMessage->getSeverity()] ?? 'unknown'),
-				'role' => 'alert',
-			]);
-			$this->tag->setContent($flashMessage->getMessage());
+            if ($this->arguments['dismiss']) {
+                $classes[] = 'alert-dismissible';
 
-			$content .= $this->tag->render();
-		}
+                if ($this->arguments['animate']) {
+                    $classes[] = 'fade show';
+                }
 
-		return $content;
-	}
+                $content .= '<button type="button" class="close" data-dismiss="alert" aria-label="'.$this->arguments['label'].'"><span aria-hidden="true">'.$this->arguments['symbol'].'</span></button>';
+            }
+
+            if ($this->tag->getAttribute('class')) {
+                $classes[] = $this->tag->getAttribute('class');
+            }
+
+            $this->tag->addAttributes(
+                [
+                    'class' => implode(' ', $classes),
+                    'role' => 'alert',
+                ]
+            );
+
+            $this->tag->setContent($content);
+
+            return $this->tag->render();
+        }
+    }
 }
