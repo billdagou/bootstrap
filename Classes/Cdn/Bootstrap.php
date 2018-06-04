@@ -9,7 +9,7 @@ class Bootstrap extends AbstractCdn {
      */
     public function loadCss(string $css = NULL) {
         parent::loadCss(
-            self::URL.self::VERSION.'/css/'.$this->getCssPackage($this->getExtConf())
+            self::URL.self::VERSION.'/css/'.$this->getCss()
         );
     }
 
@@ -19,7 +19,7 @@ class Bootstrap extends AbstractCdn {
      */
     public function loadJs(string $js = NULL, bool $footer = TRUE) {
         parent::loadJs(
-            self::URL.self::VERSION.'/js/'.$this->getJsPackage($this->getExtConf()),
+            self::URL.self::VERSION.'/js/'.$this->getJs(),
             $footer
         );
     }

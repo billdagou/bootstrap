@@ -29,12 +29,10 @@ abstract class AbstractCdn implements Cdn, SingletonInterface {
     }
 
     /**
-     * @param array $extConf
-     *
      * @return string
      */
-    protected function getCssPackage(array $extConf) {
-        switch ($extConf['css']) {
+    protected function getCss() {
+        switch ($this->getExtConf()['css']) {
             case 'default':
                 return 'bootstrap.min.css';
             case 'grid':
@@ -45,12 +43,10 @@ abstract class AbstractCdn implements Cdn, SingletonInterface {
     }
 
     /**
-     * @param array $extConf
-     *
      * @return string
      */
-    protected function getJsPackage(array $extConf) {
-        switch ($extConf['css']) {
+    protected function getJs() {
+        switch ($this->getExtConf()['css']) {
             case 'default':
                 return 'bootstrap.min.js';
             case 'bundle':

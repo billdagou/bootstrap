@@ -13,7 +13,7 @@ class Local extends AbstractCdn {
     public function loadCss(string $css = NULL) {
         parent::loadCss(
             $this->getAssetPath(
-                self::URL.'css/'.$this->getCssPackage($this->getExtConf())
+                self::URL.'css/'.$this->getCss()
             )
         );
     }
@@ -25,7 +25,7 @@ class Local extends AbstractCdn {
     public function loadJs(string $js = NULL, bool $footer = TRUE) {
         parent::loadJs(
             $this->getAssetPath(
-                self::URL.'js/'.$this->getJsPackage($this->getExtConf())
+                self::URL.'js/'.$this->getJs()
             ),
             $footer
         );
