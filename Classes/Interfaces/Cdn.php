@@ -2,7 +2,7 @@
 namespace Dagou\Bootstrap\Interfaces;
 
 interface Cdn {
-    const VERSION = '4.1.1';
+    const VERSION = '4.2.1';
 
     /**
      * @param string|NULL $css

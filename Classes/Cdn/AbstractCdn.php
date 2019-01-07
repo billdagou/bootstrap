@@ -46,11 +46,11 @@ abstract class AbstractCdn implements Cdn, SingletonInterface {
      * @return string
      */
     protected function getJs() {
-        switch ($this->getExtConf()['css']) {
+        switch ($this->getExtConf()['js']) {
             case 'default':
                 return 'bootstrap.min.js';
             case 'bundle':
-                return 'bootstrap.bundle.min.css';
+                return 'bootstrap.bundle.min.js';
         }
     }
 }
