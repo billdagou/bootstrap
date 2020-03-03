@@ -8,7 +8,7 @@ class LoadJsViewHelper extends AbstractLoadViewHelper {
     }
 
     public function render() {
-        $cdn = $this->getCdn((bool)$this->arguments['js']);
+        $cdn = $this->getCDN((bool)$this->arguments['js']);
 
         $cdn->loadJs($this->arguments['js'], $this->arguments['footer']);
     }

@@ -1,8 +1,6 @@
 <?php
-if (!defined('TYPO3_MODE')) {
-    die('Access denied.');
-}
+defined('TYPO3_MODE') || die();
 
-$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$_EXTKEY]['CDN'] = [
-    'BootstrapCDN' => \Dagou\Bootstrap\Cdn\Bootstrap::class,
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['bs'] = [
+    'Dagou\\Bootstrap\\ViewHelpers',
 ];

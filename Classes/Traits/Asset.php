@@ -1,7 +1,8 @@
 <?php
 namespace Dagou\Bootstrap\Traits;
 
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\PathUtility;
 
 trait Asset {
     /**
@@ -9,15 +10,13 @@ trait Asset {
      *
      * @return string
      */
-    protected function getAssetPath(string $path) {
+    protected function getAssetPath(string $path): string {
         if (preg_match('/^(https?:)?\/\//i', $path)) {
             return $path;
-        } elseif (strpos($path, 'EXT:') === 0) {
-            list($extKey, $path) = explode('/', substr($path, 4), 2);
-
-            return ExtensionManagementUtility::siteRelPath($extKey).$path;
         } else {
-            return $path;
+            return PathUtility::getAbsoluteWebPath(
+                GeneralUtility::getFileAbsFileName($path)
+            );
         }
     }
 }

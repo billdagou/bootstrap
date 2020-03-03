@@ -7,7 +7,7 @@ class LoadCssViewHelper extends AbstractLoadViewHelper {
     }
 
     public function render() {
-        $cdn = $this->getCdn((bool)$this->arguments['css']);
+        $cdn = $this->getCDN((bool)$this->arguments['css']);
 
         $cdn->loadCss($this->arguments['css']);
     }

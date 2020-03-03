@@ -1,6 +1,3 @@
-# cat=Bootstrap; type=user[Dagou\Bootstrap\Utility\ExtensionManagerConfigurationUtility->buildCdnSelector]; label=Bootstrap CDN
-cdn =
-
 # cat=Bootstrap; type=options[Default=default,Only Grid=grid,Reboot=reboot]; label=Bootstrap CSS
 css =
 

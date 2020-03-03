@@ -1,20 +1,17 @@
 <?php
 namespace Dagou\Bootstrap\Traits;
 
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 trait ExtConf {
     /**
-     * @var array
+     * @param string $path
+     *
+     * @return string
      */
-    protected static $extConf;
-
-    /**
-     * @return array
-     */
-    protected function getExtConf() {
-        if (self::$extConf === NULL) {
-            self::$extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['bootstrap']);
-        }
-
-        return self::$extConf;
+    protected function getExtConf(string $path): string {
+        return GeneralUtility::makeInstance(ExtensionConfiguration::class)
+            ->get('bootstrap', $path);
     }
 }
