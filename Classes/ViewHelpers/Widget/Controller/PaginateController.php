@@ -64,8 +64,12 @@ class PaginateController extends AbstractWidgetController {
 
         if ($this->currentPage < 1) {
             $this->currentPage = 1;
-        } elseif ($this->currentPage > $this->numberOfPages) {
+        }
+        if ($this->currentPage > $this->numberOfPages) {
             $this->currentPage = $this->numberOfPages;
+        }
+        if ($this->currentPage === 0) {
+            return FALSE;
         }
 
         $this->view->assignMultiple([
