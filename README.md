@@ -1,6 +1,6 @@
 # TYPO3 Extension: Bootstrap
 
-EXT:bootstrap allows you to use [Bootstrap](http://getbootstrap.com/) in your extensions.
+EXT:bootstrap allows you to use [Bootstrap](https://getbootstrap.com/) in your extensions.
 
 **The extension version only matches the Bootstrap library version, it doesn't mean anything else.**
 
