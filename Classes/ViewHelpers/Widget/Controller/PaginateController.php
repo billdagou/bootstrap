@@ -21,6 +21,7 @@ class PaginateController extends AbstractWidgetController {
             'label' => 'Page navigation',
             'size' => '',
             'align' => '',
+            'class' => '',
             'text' => [
                 'first' => '&laquo;',
                 'previous' => '&lsaquo;',

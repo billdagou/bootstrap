@@ -1,6 +1,6 @@
 <f:section name="paginator">
     <nav aria-label="{configuration.pagination.label}">
-        <ul class="pagination{f:if(condition: '{configuration.pagination.size}', then: ' pagination-{configuration.pagination.size}')}{f:if(condition: '{configuration.pagination.align}', then: ' justify-content-{configuration.pagination.align}')}">
+        <ul class="pagination{f:if(condition: configuration.pagination.size, then: ' pagination-{configuration.pagination.size}')}{f:if(condition: configuration.pagination.align, then: ' justify-content-{configuration.pagination.align}')}{f:if(condition: configuration.pagination.class, then: ' {configuration.pagination.class}')}">
             <f:if condition="{pagination.current} == 1">
                 <f:then>
                     <li class="page-item disabled">
