@@ -21,7 +21,7 @@ Or, load the javascript library on top.
     
 To use the CDN resource, please set `$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['bootstrap']['CDN']` in `ext_localconf.php` or `AdditionalConfiguration.php`.
 
-    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['bootstrap']['CDN'] = \Dagou\Bootstrap\CDN\StackPath::class;
+    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['bootstrap']['CDN'] = \Dagou\Bootstrap\CDN\JsDelivr::class;
 
 Unfortunately, you may have to disable the CDN for some reason, like saving as PDF by [WKHtmlToPdf](https://wkhtmltopdf.org/).
 
