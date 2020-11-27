@@ -3,6 +3,8 @@ namespace Dagou\Bootstrap\ViewHelpers;
 
 class LoadCssViewHelper extends AbstractLoadViewHelper {
     public function initializeArguments() {
+        parent::initializeArguments();
+
         $this->registerArgument('css', 'string', 'Bootstrap .CSS file path.');
     }
 

@@ -3,6 +3,8 @@ namespace Dagou\Bootstrap\ViewHelpers;
 
 class LoadJsViewHelper extends AbstractLoadViewHelper {
     public function initializeArguments() {
+        parent::initializeArguments();
+
         $this->registerArgument('footer', 'boolean', 'Add to footer or not.', FALSE, TRUE);
         $this->registerArgument('js', 'string', 'Bootstrap .JS file path.');
     }
