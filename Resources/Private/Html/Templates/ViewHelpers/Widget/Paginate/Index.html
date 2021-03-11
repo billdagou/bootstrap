@@ -1,3 +1,13 @@
+<f:if condition="{configuration.insertAbove}">
+    <f:render section="paginator" arguments="{pagination: pagination, configuration: configuration}" />
+</f:if>
+
+<f:renderChildren arguments="{contentArguments}" />
+
+<f:if condition="{configuration.insertBelow}">
+    <f:render section="paginator" arguments="{pagination: pagination, configuration: configuration}" />
+</f:if>
+
 <f:section name="paginator">
     <nav aria-label="{configuration.pagination.label}">
         <ul class="pagination{f:if(condition: configuration.pagination.size, then: ' pagination-{configuration.pagination.size}')}{f:if(condition: configuration.pagination.align, then: ' justify-content-{configuration.pagination.align}')}{f:if(condition: configuration.pagination.class, then: ' {configuration.pagination.class}')}">
@@ -16,27 +26,27 @@
                 </f:then>
                 <f:else>
                     <li class="page-item">
-                        <a class="page-link" href="{f:widget.uri(arguments: '{page: \'1\'}', addQueryStringMethod: configuration.addQueryStringMethod, section: configuration.section)}">
+                        <a class="page-link" href="{f:widget.uri(arguments: '{currentPage: 1}', addQueryStringMethod: configuration.addQueryStringMethod, section: configuration.section)}">
                             <f:format.raw>{configuration.pagination.text.first}</f:format.raw>
                         </a>
                     </li>
                     <li class="page-item">
-                        <a class="page-link" href="{f:widget.uri(arguments: '{page: \'{pagination.current - 1}\'}', addQueryStringMethod: configuration.addQueryStringMethod, section: configuration.section)}">
+                        <a class="page-link" href="{f:widget.uri(arguments: '{currentPage: pagination.previousPage}', addQueryStringMethod: configuration.addQueryStringMethod, section: configuration.section)}">
                             <f:format.raw>{configuration.pagination.text.previous}</f:format.raw>
                         </a>
                     </li>
                 </f:else>
             </f:if>
             <f:for each="{pagination.pages}" as="page">
-                <f:if condition="{page} == {pagination.current}">
+                <f:if condition="{page.isCurrent}">
                     <f:then>
                         <li class="page-item active">
-                            <span class="page-link">{page}</span>
+                            <span class="page-link">{page.number}</span>
                         </li>
                     </f:then>
                     <f:else>
                         <li class="page-item">
-                            <a class="page-link" href="{f:widget.uri(arguments: '{page: page}', addQueryStringMethod: configuration.addQueryStringMethod, section: configuration.section)}">{page}</a>
+                            <a class="page-link" href="{f:widget.uri(arguments: '{currentPage: page.number}', addQueryStringMethod: configuration.addQueryStringMethod, section: configuration.section)}">{page.number}</a>
                         </li>
                     </f:else>
                 </f:if>
@@ -56,12 +66,12 @@
                 </f:then>
                 <f:else>
                     <li class="page-item">
-                        <a class="page-link" href="{f:widget.uri(arguments: '{page: \'{pagination.current + 1}\'}', addQueryStringMethod: configuration.addQueryStringMethod, section: configuration.section)}">
+                        <a class="page-link" href="{f:widget.uri(arguments: '{currentPage: pagination.nextPage}', addQueryStringMethod: configuration.addQueryStringMethod, section: configuration.section)}">
                             <f:format.raw>{configuration.pagination.text.next}</f:format.raw>
                         </a>
                     </li>
                     <li class="page-item">
-                        <a class="page-link" href="{f:widget.uri(arguments: '{page: pagination.numberOfPages}', addQueryStringMethod: configuration.addQueryStringMethod, section: configuration.section)}">
+                        <a class="page-link" href="{f:widget.uri(arguments: '{currentPage: pagination.numberOfPages}', addQueryStringMethod: configuration.addQueryStringMethod, section: configuration.section)}">
                             <f:format.raw>{configuration.pagination.text.last}</f:format.raw>
                         </a>
                     </li>
@@ -70,11 +80,3 @@
         </ul>
     </nav>
 </f:section>
-
-<f:if condition="{configuration.insertAbove} && {pagination.numberOfPages} > 1">
-    <f:render section="paginator" arguments="{pagination: pagination, configuration: configuration}" />
-</f:if>
-<f:renderChildren arguments="{contentArguments}" />
-<f:if condition="{configuration.insertBelow} && {pagination.numberOfPages} > 1">
-    <f:render section="paginator" arguments="{pagination: pagination, configuration: configuration}" />
-</f:if>

@@ -1,6 +1,6 @@
 <?php
-namespace Dagou\Bootstrap\CDN;
+namespace Dagou\Bootstrap\Source;
 
-class JsDelivr extends AbstractCDN {
+class JsDelivr extends AbstractSource {
     const URL = '//cdn.jsdelivr.net/npm/bootstrap@'.self::VERSION.'/dist/';
 }

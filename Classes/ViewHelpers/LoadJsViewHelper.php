@@ -1,17 +1,43 @@
 <?php
 namespace Dagou\Bootstrap\ViewHelpers;
 
-class LoadJsViewHelper extends AbstractLoadViewHelper {
-    public function initializeArguments() {
+use Dagou\Bootstrap\Source\Local;
+use Dagou\Bootstrap\Interfaces\Source;
+use Dagou\Bootstrap\Utility\ExtensionUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Fluid\ViewHelpers\Asset\ScriptViewHelper;
+
+class LoadJsViewHelper extends ScriptViewHelper {
+    public function initializeArguments(): void {
         parent::initializeArguments();
 
-        $this->registerArgument('footer', 'boolean', 'Add to footer or not.', FALSE, TRUE);
-        $this->registerArgument('js', 'string', 'Bootstrap .JS file path.');
+        $this->registerArgument('disableSource', 'boolean', 'Disable Source.', FALSE, FALSE);
+        $this->overrideArgument(
+            'identifier',
+            'string',
+            'Use this identifier within templates to only inject your JS once, even though it is added multiple times.',
+            FALSE,
+            'bootstrap'
+        );
     }
 
-    public function render() {
-        $cdn = $this->getCDN((bool)$this->arguments['js']);
+    /**
+     * @return string
+     */
+    public function render(): string {
+        if (!$this->arguments['src']) {
+            if (!$this->arguments['disableSource']
+                && ($className = ExtensionUtility::getSource())
+                && is_subclass_of($className, Source::class)
+            ) {
+                $source = GeneralUtility::makeInstance($className);
+            } else {
+                $source = GeneralUtility::makeInstance(Local::class);
+            }
 
-        $cdn->loadJs($this->arguments['js'], $this->arguments['footer']);
+            $this->tag->addAttribute('src', $source->getJs());
+        }
+
+        return parent::render();
     }
 }

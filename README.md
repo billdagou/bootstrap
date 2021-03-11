@@ -12,18 +12,16 @@ You can load the libraries in your Fluid template easily. You may need to load j
 
 You can also load your own libraries.
 
-    <bs:loadCss css="..." />
-    <bs:loadJs js="..." />
-    
-Or, load the javascript library on top.
+    <bs:loadCss href="..." />
+    <bs:loadJs src="..." />
 
-    <bs:loadJs footer="false" />
-    
-To use the CDN resource, please set `$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['bootstrap']['CDN']` in `ext_localconf.php` or `AdditionalConfiguration.php`.
+For more options please refer to &lt;f:asset.css&gt; and &lt;f:asset.script&gt;.
 
-    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['bootstrap']['CDN'] = \Dagou\Bootstrap\CDN\JsDelivr::class;
+To use other Bootstrap source, you can register it in `ext_localconf.php` or `AdditionalConfiguration.php`.
 
-Unfortunately, you may have to disable the CDN for some reason, like saving as PDF by [WKHtmlToPdf](https://wkhtmltopdf.org/).
+    \Dagou\Bootstrap\Utility\ExtensionUtility::registerSource(\Dagou\Bootstrap\Source\JsDelivr::class);
 
-    <bs:loadCss disableCdn="true" />
-    <bs:loadJs disableCdn="true" />
+You may want to disable the other source and use the local one instead in some cases, for example saving page as PDF by [WKHtmlToPdf](https://wkhtmltopdf.org/).
+
+    <bs:loadCss disableSource="true" />
+    <bs:loadJs disableSource="true" />
