@@ -5,9 +5,8 @@ use Dagou\Bootstrap\Source\Local;
 use Dagou\Bootstrap\Interfaces\Source;
 use Dagou\Bootstrap\Utility\ExtensionUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Fluid\ViewHelpers\Asset\ScriptViewHelper;
 
-class LoadJsViewHelper extends ScriptViewHelper {
+class CssViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\Asset\CssViewHelper {
     public function initializeArguments(): void {
         parent::initializeArguments();
 
@@ -15,7 +14,7 @@ class LoadJsViewHelper extends ScriptViewHelper {
         $this->overrideArgument(
             'identifier',
             'string',
-            'Use this identifier within templates to only inject your JS once, even though it is added multiple times.',
+            'Use this identifier within templates to only inject your CSS once, even though it is added multiple times.',
             FALSE,
             'bootstrap'
         );
@@ -25,7 +24,7 @@ class LoadJsViewHelper extends ScriptViewHelper {
      * @return string
      */
     public function render(): string {
-        if (!$this->arguments['src']) {
+        if (!$this->arguments['href']) {
             if (!$this->arguments['disableSource']
                 && ($className = ExtensionUtility::getSource())
                 && is_subclass_of($className, Source::class)
@@ -35,7 +34,7 @@ class LoadJsViewHelper extends ScriptViewHelper {
                 $source = GeneralUtility::makeInstance(Local::class);
             }
 
-            $this->tag->addAttribute('src', $source->getJs());
+            $this->tag->addAttribute('href', $source->getCss());
         }
 
         return parent::render();
