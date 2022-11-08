@@ -1,9 +1,13 @@
 <?php
 namespace Dagou\Bootstrap\ViewHelpers\Form;
 
+use Dagou\Bootstrap\Traits\OverrideClassAttribute;
+use Dagou\Bootstrap\Traits\OverrideErrorClassArgument;
 use TYPO3\CMS\Fluid\ViewHelpers\Form\AbstractFormFieldViewHelper;
 
 class RangeViewHelper extends AbstractFormFieldViewHelper {
+    use OverrideClassAttribute, OverrideErrorClassArgument;
+
     /**
      * @var string
      */
@@ -11,11 +15,12 @@ class RangeViewHelper extends AbstractFormFieldViewHelper {
 
     public function initializeArguments() {
         parent::initializeArguments();
-        $this->registerArgument('errorClass', 'string', 'CSS class to set if there are errors for this view helper', FALSE, 'is-invalid');
+        $this->overrideErrorClassArgument();
         $this->registerTagAttribute('min', 'int', 'Min value');
         $this->registerTagAttribute('max', 'int', 'Max value');
         $this->registerTagAttribute('step', 'float', 'Step value');
         $this->registerUniversalTagAttributes();
+        $this->overrideClassAttribute('form-range');
     }
 
     /**

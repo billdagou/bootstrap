@@ -8,32 +8,36 @@ use TYPO3\CMS\Fluid\ViewHelpers\FormViewHelper;
 
 class ValidationViewHelper extends AbstractFormFieldViewHelper {
     public function initializeArguments() {
-        $this->registerArgument('name', 'string', 'Name of input tag');
-        $this->registerArgument('property', 'string', 'Name of Object Property.');
-        $this->registerArgument('arguments', 'array', 'Arguments', FALSE, []);
+        $this->registerArgument('property', 'string', 'Name of object property', TRUE);
+        $this->registerArgument('arguments', 'array', 'Arguments for localization');
         $this->registerTagAttribute('class', 'string', 'CSS class(es) for this element', FALSE, 'invalid-feedback');
     }
 
     public function render() {
-        if ($this->isObjectAccessorMode()) {
-            $property = $this->viewHelperVariableContainer->get(FormViewHelper::class, 'formObjectName').'.'.$this->arguments['property'];
+        $formObjectName = $this->viewHelperVariableContainer->get(FormViewHelper::class, 'formObjectName');
 
-            $result = $this->getRequest()->getOriginalRequestMappingResults()->forProperty($property);
-        } elseif ($this->arguments['name']) {
-            $property = str_replace(['[', ']'], ['.', ''], $this->arguments['name']);
-
-            $result = $this->getRequest()->getOriginalRequestMappingResults()->forProperty($property);
-        } else {
-            $result = new Result();
-        }
+        $result = $this->isObjectAccessorMode() ?
+            $this->getRequest()
+                ->getOriginalRequestMappingResults()
+                    ->forProperty($formObjectName)
+                        ->forProperty($this->arguments['property'])
+            :
+            new Result();
 
         if ($result->hasErrors()) {
-            if (($content = LocalizationUtility::translate('validation.'.$property.'.'.$result->getErrors()[0]->getMessage(), $this->getRequest()->getControllerExtensionName(), $this->arguments['arguments']))) {
-                $this->tag->setContent($content);
-                $this->tag->addAttribute('class', $this->arguments['class']);
+            $error = $result->getErrors()[0]->getMessage();
 
-                return $this->tag->render();
-            }
+            $this->tag->setContent(
+                LocalizationUtility::translate(
+                    'validation.'.$formObjectName.'.'.$this->arguments['property'].'.'.$error,
+                    $this->getRequest()->getControllerExtensionName(),
+                    $this->arguments['arguments']
+                ) ?? $error
+            );
+
+            $this->tag->addAttribute('class', $this->arguments['class']);
+
+            return $this->tag->render();
         }
     }
 }

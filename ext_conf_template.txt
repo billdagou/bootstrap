@@ -1,5 +1,0 @@
-# cat=Bootstrap; type=options[Default=default,Only Grid=grid,Reboot=reboot]; label=Bootstrap CSS
-css =
-
-# cat=Bootstrap; type=options[Default=default,With Popper=bundle]; label=Bootstrap JS
-js =
