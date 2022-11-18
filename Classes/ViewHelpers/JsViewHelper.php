@@ -8,10 +8,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Fluid\ViewHelpers\Asset\ScriptViewHelper;
 
 class JsViewHelper extends ScriptViewHelper {
-    /**
-     * @var array
-     */
-    protected static $builds = [
+    protected static array $builds = [
         'bundle',
         'esm',
     ];
@@ -26,7 +23,8 @@ class JsViewHelper extends ScriptViewHelper {
             'identifier',
             'string',
             'Use this identifier within templates to only inject your JS once, even though it is added multiple times.',
-            FALSE
+            FALSE,
+            'bootstrap'
         );
     }
 
@@ -47,8 +45,6 @@ class JsViewHelper extends ScriptViewHelper {
 
             $this->tag->addAttribute('src', $source->getJs($build));
         }
-
-        $this->arguments['identifier'] = 'bootstrap';
 
         return parent::render();
     }

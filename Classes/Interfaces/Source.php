@@ -2,15 +2,18 @@
 namespace Dagou\Bootstrap\Interfaces;
 
 interface Source {
-    const VERSION = '5.2.2';
-
     /**
+     * @param string $build
+     * @param bool $rtl
+     *
      * @return string
      */
-    public function getCss(): string;
+    public function getCss(string $build, bool $rtl): string;
 
     /**
+     * @param string $build
+     *
      * @return string
      */
-    public function getJs(): string;
+    public function getJs(string $build): string;
 }

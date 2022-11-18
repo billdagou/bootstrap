@@ -13,7 +13,10 @@ class ValidationViewHelper extends AbstractFormFieldViewHelper {
         $this->registerTagAttribute('class', 'string', 'CSS class(es) for this element', FALSE, 'invalid-feedback');
     }
 
-    public function render() {
+    /**
+     * @return string
+     */
+    public function render(): string {
         $formObjectName = $this->viewHelperVariableContainer->get(FormViewHelper::class, 'formObjectName');
 
         $result = $this->isObjectAccessorMode() ?
@@ -39,5 +42,7 @@ class ValidationViewHelper extends AbstractFormFieldViewHelper {
 
             return $this->tag->render();
         }
+
+        return '';
     }
 }

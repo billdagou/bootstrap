@@ -7,10 +7,7 @@ use Dagou\Bootstrap\Utility\ExtensionUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class CssViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\Asset\CssViewHelper {
-    /**
-     * @var array
-     */
-    protected static $builds = [
+    protected static array $builds = [
         'grid',
         'reboot',
         'utilities',

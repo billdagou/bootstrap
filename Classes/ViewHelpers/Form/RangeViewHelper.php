@@ -26,7 +26,7 @@ class RangeViewHelper extends AbstractFormFieldViewHelper {
     /**
      * @return string
      */
-    public function render() {
+    public function render(): string {
         $name = $this->getName();
         $this->registerFieldNameForFormTokenGeneration($name);
         $this->setRespectSubmittedDataValue(true);

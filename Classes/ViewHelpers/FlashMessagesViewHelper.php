@@ -1,7 +1,7 @@
 <?php
 namespace Dagou\Bootstrap\ViewHelpers;
 
-use TYPO3\CMS\Core\Messaging\FlashMessage;
+use TYPO3\CMS\Core\Messaging\AbstractMessage;
 use TYPO3\CMS\Core\Messaging\FlashMessageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Service\ExtensionService;
@@ -9,20 +9,19 @@ use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 class FlashMessagesViewHelper extends AbstractViewHelper {
+    protected static array $classMappings = [
+        AbstractMessage::NOTICE  => 'primary',
+        AbstractMessage::INFO  => 'info',
+        AbstractMessage::OK => 'success',
+        AbstractMessage::WARNING => 'warning',
+        AbstractMessage::ERROR => 'danger',
+    ];
+
     /**
      * @var bool
      */
     protected $escapeOutput = FALSE;
-    /**
-     * @var array
-     */
-    protected static $classMappings = [
-        FlashMessage::NOTICE  => 'primary',
-        FlashMessage::INFO  => 'info',
-        FlashMessage::OK => 'success',
-        FlashMessage::WARNING => 'warning',
-        FlashMessage::ERROR => 'danger',
-    ];
+
 
     public function initializeArguments() {
         $this->registerArgument('queueIdentifier', 'string', 'Flash-message queue to use');

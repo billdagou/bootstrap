@@ -6,6 +6,7 @@ use TYPO3\CMS\Core\SingletonInterface;
 
 abstract class AbstractSource implements Source, SingletonInterface {
     protected const URL = '';
+    protected const VERSION = '5.2.2';
 
     /**
      * @param string $build
@@ -13,7 +14,7 @@ abstract class AbstractSource implements Source, SingletonInterface {
      *
      * @return string
      */
-    public function getCss(string $build = '', bool $rtl = FALSE): string {
+    public function getCss(string $build, bool $rtl): string {
         return static::URL.'css/'.$this->getCssBuild($build, $rtl);
     }
 
@@ -32,7 +33,7 @@ abstract class AbstractSource implements Source, SingletonInterface {
      *
      * @return string
      */
-    public function getJs(string $build = ''): string {
+    public function getJs(string $build): string {
         return static::URL.'js/'.$this->getJsBuild($build);
     }
 
