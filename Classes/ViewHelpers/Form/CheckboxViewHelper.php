@@ -10,6 +10,8 @@ class CheckboxViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\Form\CheckboxViewH
     public function initializeArguments() {
         parent::initializeArguments();
 
+        $this->registerTagAttribute('role', 'string', '');
+
         $this->overrideErrorClassArgument();
         $this->overrideClassAttribute('form-check-input');
     }
