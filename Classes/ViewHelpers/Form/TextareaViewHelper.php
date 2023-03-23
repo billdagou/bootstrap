@@ -10,6 +10,8 @@ class TextareaViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\Form\TextareaViewH
     public function initializeArguments() {
         parent::initializeArguments();
 
+        $this->registerTagAttribute('autocomplete', 'string', 'Hint for form autofill feature');
+
         $this->overrideErrorClassArgument();
         $this->overrideClassAttribute('form-control');
     }
