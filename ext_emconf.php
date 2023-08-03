@@ -2,7 +2,7 @@
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Bootstrap',
     'description' => 'Bootstrap, https://getbootstrap.com/',
-    'version' => '5.2.2',
+    'version' => '5.3.1',
     'category' => 'misc',
     'constraints' => [
         'depends' => [
