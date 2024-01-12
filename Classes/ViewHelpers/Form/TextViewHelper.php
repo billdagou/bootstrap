@@ -1,5 +1,6 @@
 <?php
 namespace Dagou\Bootstrap\ViewHelpers\Form;
 
-class TextViewHelper extends TextfieldViewHelper {
+class TextViewHelper extends InputViewHelper {
+    protected string $type = 'text';
 }

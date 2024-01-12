@@ -4,26 +4,28 @@ namespace Dagou\Bootstrap\ViewHelpers\Form;
 use Dagou\Bootstrap\Traits\OverrideClassAttribute;
 use TYPO3\CMS\Fluid\ViewHelpers\Form\AbstractFormFieldViewHelper;
 
-class TextareaViewHelper extends AbstractFormFieldViewHelper {
+abstract class InputViewHelper extends AbstractFormFieldViewHelper {
     use OverrideClassAttribute;
 
     /**
      * @var string
      */
-    protected $tagName = 'textarea';
+    protected $tagName = 'input';
+    protected string $type = '';
 
     public function initializeArguments(): void {
         parent::initializeArguments();
 
         $this->registerArgument('errorClass', 'string', 'CSS class to set if there are errors for this ViewHelper', FALSE, 'is-invalid');
-        $this->registerArgument('required', 'bool', 'Specifies whether the textarea is required', FALSE, FALSE);
+        $this->registerArgument('required', 'bool', 'If the field is required or not', FALSE, FALSE);
         $this->registerTagAttribute('autocomplete', 'string', 'Hint for form autofill feature');
-        $this->registerTagAttribute('autofocus', 'string', 'Specifies that a text area should automatically get focus when the page loads');
-        $this->registerTagAttribute('cols', 'int', 'The number of columns of a text area');
+        $this->registerTagAttribute('autofocus', 'string', 'Specifies that an input should automatically get focus when the page loads');
         $this->registerTagAttribute('disabled', 'string', 'Specifies that the input element should be disabled when the page loads');
-        $this->registerTagAttribute('placeholder', 'string', 'The placeholder of the textarea');
-        $this->registerTagAttribute('readonly', 'string', 'The readonly attribute of the textarea', FALSE);
-        $this->registerTagAttribute('rows', 'int', 'The number of rows of a text area');
+        $this->registerTagAttribute('maxlength', 'int', 'The maxlength attribute of the input field (will not be validated)');
+        $this->registerTagAttribute('readonly', 'string', 'The readonly attribute of the input field');
+        $this->registerTagAttribute('size', 'int', 'The size of the input field');
+        $this->registerTagAttribute('placeholder', 'string', 'The placeholder of the textfield');
+        $this->registerTagAttribute('pattern', 'string', 'HTML5 validation pattern');
 
         $this->registerUniversalTagAttributes();
 
@@ -35,16 +37,25 @@ class TextareaViewHelper extends AbstractFormFieldViewHelper {
      */
     public function render(): string {
         $required = $this->arguments['required'];
+        $type = $this->type;
+
         $name = $this->getName();
         $this->registerFieldNameForFormTokenGeneration($name);
-        $this->setRespectSubmittedDataValue(TRUE);
+        $this->setRespectSubmittedDataValue(true);
 
-        $this->tag->forceClosingTag(TRUE);
+        $this->tag->addAttribute('type', $type);
         $this->tag->addAttribute('name', $name);
-        if ($required === TRUE) {
+
+        $value = $this->getValueAttribute();
+
+        if ($value !== NULL) {
+            $this->tag->addAttribute('value', $value);
+        }
+
+        if ($required !== FALSE) {
             $this->tag->addAttribute('required', 'required');
         }
-        $this->tag->setContent(htmlspecialchars((string)$this->getValueAttribute()));
+
         $this->addAdditionalIdentityPropertiesIfNeeded();
         $this->setErrorClassAttribute();
 

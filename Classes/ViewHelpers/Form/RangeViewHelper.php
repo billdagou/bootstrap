@@ -1,8 +1,10 @@
 <?php
 namespace Dagou\Bootstrap\ViewHelpers\Form;
 
-class RangeViewHelper extends TextfieldViewHelper {
-    public function initializeArguments() {
+class RangeViewHelper extends InputViewHelper {
+    protected string $type = 'range';
+
+    public function initializeArguments(): void {
         parent::initializeArguments();
 
         $this->registerTagAttribute('min', 'int', 'Min value');
@@ -10,6 +12,5 @@ class RangeViewHelper extends TextfieldViewHelper {
         $this->registerTagAttribute('step', 'float', 'Step value');
 
         $this->overrideClassAttribute('form-range');
-        $this->overrideArgument('type', 'string', 'The field type', FALSE, 'range');
     }
 }

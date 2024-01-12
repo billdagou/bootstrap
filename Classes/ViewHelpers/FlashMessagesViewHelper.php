@@ -1,32 +1,21 @@
 <?php
 namespace Dagou\Bootstrap\ViewHelpers;
 
-use TYPO3\CMS\Core\Messaging\AbstractMessage;
 use TYPO3\CMS\Core\Messaging\FlashMessageService;
+use TYPO3\CMS\Core\Type\ContextualFeedbackSeverity;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Service\ExtensionService;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 class FlashMessagesViewHelper extends AbstractViewHelper {
-    protected static array $classMappings = [
-        AbstractMessage::NOTICE  => 'primary',
-        AbstractMessage::INFO  => 'info',
-        AbstractMessage::OK => 'success',
-        AbstractMessage::WARNING => 'warning',
-        AbstractMessage::ERROR => 'danger',
-    ];
-
     /**
      * @var bool
      */
     protected $escapeOutput = FALSE;
 
-
-    public function initializeArguments() {
+    public function initializeArguments(): void {
         $this->registerArgument('queueIdentifier', 'string', 'Flash-message queue to use');
-        $this->registerArgument('severity', 'string', 'Optional severity, must be either of one of \TYPO3\CMS\Core\Messaging\AbstractMessage constants');
-        $this->registerArgument('flush', 'boolean', 'Flush the message queue or not', FALSE, TRUE);
     }
 
     /**
@@ -37,9 +26,6 @@ class FlashMessagesViewHelper extends AbstractViewHelper {
      * @return string
      */
     public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): string {
-        $severity = self::$classMappings[$arguments['severity']] ?? NULL;
-        $getAllMessagesFunc = $arguments['flush'] ? 'getAllMessagesAndFlush' : 'getAllMessages';
-
         if (($queueIdentifier = $arguments['queueIdentifier']) === NULL) {
             $queueIdentifier = 'extbase.flashmessages.'.GeneralUtility::makeInstance(ExtensionService::class)
                 ->getPluginNamespace(
@@ -50,17 +36,33 @@ class FlashMessagesViewHelper extends AbstractViewHelper {
 
         $flashMessages = GeneralUtility::makeInstance(FlashMessageService::class)
             ->getMessageQueueByIdentifier($queueIdentifier)
-                ->$getAllMessagesFunc($severity);
+                ->getAllMessagesAndFlush();
 
         $content = '';
 
-        if ($flashMessages !== NULL  && count($flashMessages)) {
+        if (count($flashMessages) > 0) {
             /** @var \TYPO3\CMS\Core\Messaging\FlashMessage $flashMessage */
             foreach ($flashMessages as $flashMessage) {
-                $content .= '<div class="alert alert-'.(self::$classMappings[$flashMessage->getSeverity()] ?? 'secondary').'">'.$flashMessage->getMessage().'</div>';
+                $content .= '<div class="alert alert-'.self::getClassMappings($flashMessage->getSeverity()).'" role="alert">'.$flashMessage->getMessage().'</div>';
             }
         }
 
         return $content;
+    }
+
+    /**
+     * @param \TYPO3\CMS\Core\Type\ContextualFeedbackSeverity $severity
+     *
+     * @return string
+     */
+    protected static function getClassMappings(ContextualFeedbackSeverity $severity): string {
+        return match ($severity) {
+            ContextualFeedbackSeverity::NOTICE => 'primary',
+            ContextualFeedbackSeverity::INFO => 'info',
+            ContextualFeedbackSeverity::OK => 'success',
+            ContextualFeedbackSeverity::WARNING => 'warning',
+            ContextualFeedbackSeverity::ERROR => 'danger',
+            default => 'secondary',
+        };
     }
 }
