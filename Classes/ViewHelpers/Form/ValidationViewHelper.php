@@ -10,6 +10,7 @@ class ValidationViewHelper extends AbstractFormFieldViewHelper {
         $this->registerArgument('property', 'string', 'Name of object property');
         $this->registerArgument('name', 'string', 'Name of input tag');
         $this->registerArgument('arguments', 'array', 'Arguments for localization');
+        $this->registerArgument('ignoreCollectionProperty', 'boolean', 'Ignore the CollectionValidator property path', FALSE, FALSE);
         $this->registerTagAttribute('class', 'string', 'CSS class(es) for this element', FALSE, 'invalid-feedback');
     }
 
@@ -28,6 +29,10 @@ class ValidationViewHelper extends AbstractFormFieldViewHelper {
 
         if ($property !== '') {
             $result = $result->forProperty($property);
+
+            if ($this->arguments['ignoreCollectionProperty']) {
+                $property = preg_replace('/\.\d+\./', '.', $property);
+            }
         }
 
         if ($result->hasErrors()) {
